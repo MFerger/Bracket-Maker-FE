@@ -1,7 +1,15 @@
 <ion-view>
   <ion-content class="padding">
-    <label>Create A Bracket Name</label>
-<input type="text" name="name" value="">
-<a ui-sref='choose-player-name' type="button" class='btn btn-warning'>Get a name!</a>
+<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Create a Bracket Name</span>
+    <input type="text" placeholder="Bracket Title">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Create a Player Name</span>
+    <input type="text" placeholder="Cool Player">
+  </label>
+  <a ui-sref='bracket' type="button" class='btn btn-success'>Go to bracket!</a>
+</div>
 </ion-content>
 </ion-view>
