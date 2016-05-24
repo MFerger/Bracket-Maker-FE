@@ -28,6 +28,7 @@ body{
   font-size:small;
   padding:10px;
   line-height:1.4em;
+  background-color: rgb(127, 172, 245);
 }
 
 li.game{
@@ -52,3 +53,33 @@ li.game{
   li.game-bottom{
     border-top:1px solid #aaa;
   }
+.background {
+  background-color: rgb(127, 172, 245);
+}
+.navBackground {
+  background-color: rgb(0, 55, 138);
+}
+.white {
+  color: white;
+}
+#createButton, #joinButton {
+  margin: 5%;
+  width: 85%;
+  height: 30vh;
+}
+#createButton {
+  margin-top: 15%;
+}
+.middle {
+  padding-top: 20%;
+  font-size: 35px;
+}
+.center {
+  text-align: center;
+}
+.inputBoxes {
+  margin-right: 5%;
+}
+#inputBox1, #inputBox2 {
+  margin-right: 5%;
+}
