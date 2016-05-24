@@ -33,7 +33,7 @@ angular.module('bracket', ['ionic','ionic.service.core'])
 
   // setup an abstract state for the tabs directive
     .state('tab', {
-    url: '/tab',
+    // url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
@@ -41,10 +41,22 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     url: '/',
     templateUrl: 'templates/homePage.html'
   })
+    .state('create-bracket-name', {
+    url: '/create',
+    templateUrl: 'templates/create-bracket-name.html'
+  })
+    .state('choose-player-name', {
+    url: '/playername',
+    templateUrl: 'templates/choose-player-name.html'
+  })
+    .state('bracket', {
+    url: '/bracket',
+    templateUrl: 'templates/bracket.html'
+  })
 
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/');
 
 });
