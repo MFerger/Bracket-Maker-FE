@@ -39,19 +39,24 @@ angular.module('bracket', ['ionic','ionic.service.core'])
   })
     .state('home', {
     url: '/',
-    templateUrl: 'templates/homePage.html'
+    templateUrl: 'templates/homePage.html',
+    controller: 'BrSetupController'
   })
     .state('create-bracket-name', {
     url: '/create',
-    templateUrl: 'templates/create-bracket-name.html'
+    templateUrl: 'templates/create-bracket-name.html',
+    controller: 'BrSetupController'
   })
     .state('choose-player-name', {
     url: '/playername',
-    templateUrl: 'templates/choose-player-name.html'
+    templateUrl: 'templates/choose-player-name.html',
+    controller: 'BrSetupController'
   })
     .state('bracket', {
     url: '/bracket',
-    templateUrl: 'templates/bracket.html'
+    template: '<bm-bracket></bm-bracket>',
+
+    // templateUrl: 'templates/bracket.html'
   })
 
 
