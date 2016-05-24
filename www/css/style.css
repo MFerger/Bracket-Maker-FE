@@ -67,11 +67,20 @@ li.game{
   width: 85%;
   height: 30vh;
 }
+#bracketButton {
+  margin: 5%;
+  width: 85%;
+  height: 20vh;
+}
 #createButton {
   margin-top: 15%;
 }
 .middle {
   padding-top: 20%;
+  font-size: 35px;
+}
+.middle2 {
+  padding-top: 10%;
   font-size: 35px;
 }
 .center {
@@ -81,5 +90,8 @@ li.game{
   margin-right: 5%;
 }
 #inputBox1, #inputBox2 {
-  margin-right: 5%;
+  margin-top: 15%;
+}
+#bracketButton {
+  margin-top: 20%;
 }

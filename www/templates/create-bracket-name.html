@@ -2,15 +2,15 @@
   <ion-content class="padding">
 
 <div class="list">
-  <label class="item item-input item-stacked-label inputBoxes">
+  <label id='inputBox1' class="item item-input item-stacked-label inputBoxes">
     <span class="input-label">Create a Bracket Name</span>
-    <input type="text" id='inputBox1' placeholder="Bracket Title">
+    <input type="text" placeholder="Bracket Title">
   </label><br>
-  <label class="item item-input item-stacked-label inputBoxes">
+  <label class="item item-input item-stacked-label inputBoxes" id='inputBox2'>
     <span class="input-label">Create a Player Name</span>
-    <input type="text" id='inputBox2' placeholder="Cool Player">
+    <input type="text" placeholder="Cool Player">
   </label>
-  <a ui-sref='bracket' type="button" class='btn btn-warning'>Go to bracket!</a>
+  <a ui-sref='bracket' type="button" id='bracketButton' class='btn btn-warning middle2'>Go to bracket!</a>
 </div>
 
 </ion-content>
