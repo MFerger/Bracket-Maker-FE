@@ -9,7 +9,7 @@
     function bracketFactory($http, $log) {
       var _bracket = {
         id: 897412309487132,
-        name: 'Toast',
+        name: '',
         player1: 'Player 1',
         player2: 'Player 2',
         player3: 'Mike',

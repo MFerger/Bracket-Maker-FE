@@ -1,7 +1,7 @@
 <ion-view>
   <ion-content class="padding">
     <label>Search Bracket Key</label>
-<input type="text" name="name" value="">
+<input type="text" name="name" ng-model="vm.bracket.name" value="">
 <a ui-sref='choose-player-name({bracketId: vm.bracket.name})' type="button" class='btn btn-success'>Get a name!</a>
 </ion-content>
 </ion-view>
