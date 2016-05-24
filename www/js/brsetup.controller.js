@@ -4,11 +4,13 @@
   angular.module('bracket')
   .controller('BrSetupController', brsetupController);
 
-  brsetupController.$inject = []
+  brsetupController.$inject = ['bracketService']
 
-  function brsetupController() {
+  function brsetupController(bracketService) {
     var vm = this;
-    console.log('in brsetupController')
+    vm.bracket = bracketService.bracket;
+    
+    console.log('in brsetupController', vm)
   }
 
 }());
