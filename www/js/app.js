@@ -53,6 +53,14 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     url: '/bracket',
     templateUrl: 'templates/bracket.html'
   })
+    .state('search-bracket-name', {
+    url: '/searchbracket',
+    templateUrl: 'templates/search-bracket-name.html'
+  })
+    .state('round-details', {
+    url: '/rounddetails',
+    templateUrl: 'templates/round-details.html'
+  })
 
 
 
