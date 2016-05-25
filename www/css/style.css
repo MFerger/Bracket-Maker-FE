@@ -31,6 +31,10 @@ body{
   background-color: rgb(127, 172, 245);
 }
 
+li {
+  color: rgb(182, 97, 8);
+}
+
 li.game{
   padding-left:20px;
 }
@@ -43,15 +47,15 @@ li.game{
     margin-right:5px;
   }
 
-  li.game-top{ border-bottom:1px solid #aaa; }
+  li.game-top{ border-bottom:1px solid #ffffff; }
 
   li.game-spacer{
-    border-right:1px solid #aaa;
+    border-right:1px solid #ffffff;
     min-height:40px;
   }
 
   li.game-bottom{
-    border-top:1px solid #aaa;
+    border-top:1px solid #ffffff;
   }
 .background {
   background-color: rgb(127, 172, 245);
@@ -63,25 +67,29 @@ li.game{
   color: white;
 }
 #createButton, #joinButton {
-  margin: 5%;
-  width: 85%;
+  margin: 2.5%;
+  width: 85vw;
   height: 30vh;
 }
 #bracketButton {
-  margin: 5%;
-  width: 85%;
+  margin: 2.5%;
+  width: 85vw;
   height: 20vh;
 }
 #createButton {
-  margin-top: 15%;
+  margin-top: 15vh;
 }
 .middle {
   padding-top: 20%;
-  font-size: 35px;
+  font-size: 30px;
 }
 .middle2 {
   padding-top: 10%;
-  font-size: 35px;
+  font-size: 30px;
+}
+.middle3 {
+  padding-top: 2%;
+  font-size: 20px;
 }
 .center {
   text-align: center;
@@ -94,4 +102,14 @@ li.game{
 }
 #bracketButton {
   margin-top: 20%;
+}
+#round-details-label {
+  margin-top: 10%;
+}
+#submitWinner {
+  width: 50vw;
+  height: 10vh;
+  align: auto;
+  margin-left: 22%;
+  margin-top: 5%;
 }
