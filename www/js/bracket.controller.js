@@ -18,8 +18,6 @@
 
     function bracketController($log, bracketService) {
       var vm = this;
-      vm.bracket = bracketService.bracket;
-      console.log('in bracket directive')
     }
 
 }());
