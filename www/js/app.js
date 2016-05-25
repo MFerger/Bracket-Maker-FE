@@ -56,7 +56,7 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     controllerAs: 'vm'
   })
     .state('bracket', {
-    url: '/bracket',
+    url: '/bracket/:bracket_name',
     templateUrl: "templates/bracket.html",
     controller: 'bracketController',
     controllerAs: 'vm'

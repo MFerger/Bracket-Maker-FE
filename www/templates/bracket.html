@@ -1,38 +1,39 @@
 <ion-view class='background'>
   <ion-content class="padding">
-    <h1>{{vm.bracket.name}}</h1>
+    <!-- <h5>{{vm.bracket}}</h5> -->
+    <h1>{{vm.bracket[0].bracket_name}}</h1>
     <main id="tournament">
     	<ul class="round round-1">
     		<li class="spacer">&nbsp;</li>
 
         <a ui-sref='round-details'>
-    		<li class="game game-top winner">{{vm.bracket.player1}}</li>
+    		<li class="game game-top winner">{{vm.bracket[0].user_name}}</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">{{vm.bracket.player2}}</li>
+    		<li class="game game-bottom ">{{vm.bracket[1].user_name}}</li>
         </a>
 
     		<li class="spacer">&nbsp;</li>
 
         <a ui-sref='round-details'>
-    		<li class="game game-top winner">{{vm.bracket.player3}}</li>
+    		<li class="game game-top winner">{{vm.bracket[2].user_name}}</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">{{vm.bracket.player4}}</li>
+    		<li class="game game-bottom ">{{vm.bracket[3].user_name}}</li>
       </a>
 
     		<li class="spacer">&nbsp;</li>
 
           <a ui-sref='round-details'>
-    		<li class="game game-top ">{{vm.bracket.player5}}</li>
+    		<li class="game game-top ">{{vm.bracket[4].user_name}}</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom winner">{{vm.bracket.player6}}</li>
+    		<li class="game game-bottom winner">{{vm.bracket[5].user_name}}</li>
       </a>
 
     		<li class="spacer">&nbsp;</li>
 
           <a ui-sref='round-details'>
-    		<li class="game game-top winner">{{vm.bracket.player7}}</li>
+    		<li class="game game-top winner">{{vm.bracket[6].user_name}}</li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">{{vm.bracket.player8}}</li>
+    		<li class="game game-bottom ">{{vm.bracket[7].user_name}}</li>
       </a>
 
     		<li class="spacer">&nbsp;</li>
@@ -41,17 +42,17 @@
     		<li class="spacer">&nbsp;</li>
 
           <a ui-sref='round-details'>
-    		<li class="game game-top winner">{{vm.bracket.player1}}</li>
+    		<li class="game game-top winner"></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">{{vm.bracket.player3}}</li>
+    		<li class="game game-bottom "></li>
       </a>
 
     		<li class="spacer">&nbsp;</li>
 
           <a ui-sref='round-details'>
-    		<li class="game game-top winner">{{vm.bracket.player6}}</li>
+    		<li class="game game-top winner"></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">{{vm.bracket.player7}}</li>
+    		<li class="game game-bottom "></li>
       </a>
 
     		<li class="spacer">&nbsp;</li>
@@ -61,9 +62,9 @@
     		<li class="spacer">&nbsp;</li>
 
         <a ui-sref='round-details'>
-    		<li class="game game-top winner">{{vm.bracket.player1}}</li>
+    		<li class="game game-top winner"></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">{{vm.bracket.player6}}</li>
+    		<li class="game game-bottom "></li>
       </a>
 
     		<li class="spacer">&nbsp;</li>

@@ -14,10 +14,15 @@
     //   }
     // }
 
-    bracketController.$inject = ['$log', 'bracketService'];
+    bracketController.$inject = ['$log', 'bracketService', '$http', '$stateParams'];
 
-    function bracketController($log, bracketService) {
+    function bracketController($log, bracketService, $http, $stateParams) {
       var vm = this;
+      console.log('state params', $stateParams);
+      $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/bracket/' + $stateParams.bracket_name).then(function(bracket){
+        vm.bracket = bracket.data;
+      })
+
     }
 
 }());
