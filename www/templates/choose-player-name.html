@@ -4,7 +4,7 @@
       <h2>Bracket:{{vm.bracket.name}}</h2>
       <label class="item item-input item-stacked-label inputBoxes" >
         <span class="input-label">Create a Player Name</span>
-        <input type="text" placeholder="Cool Player">
+        <input type="text" ng-model='vm.user.name' placeholder="Cool Player">
       </label>
       <a ui-sref='bracket' type="button" id='bracketButton' class='btn btn-warning middle2'>Go to bracket! <i class='ion-arrow-right-c'></i></a>
     </div>

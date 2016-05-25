@@ -20,13 +20,8 @@
         player8: 'Player 8',
       }
 
-
-
       return {
         bracket: _bracket
-
       }
-
     }
-
 }());

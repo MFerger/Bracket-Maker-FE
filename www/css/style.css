@@ -97,15 +97,19 @@ li.game{
 .inputBoxes {
   margin-right: 5%;
 }
+
 #inputBox1, #inputBox2 {
   margin-top: 15%;
 }
+
 #bracketButton {
   margin-top: 20%;
 }
+
 #round-details-label {
   margin-top: 10%;
 }
+
 #submitWinner {
   width: 50vw;
   height: 10vh;

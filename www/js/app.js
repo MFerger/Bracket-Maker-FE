@@ -50,7 +50,7 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     controllerAs: 'vm'
   })
     .state('choose-player-name', {
-    url: '/:bracketId/player/add',
+    url: '/:bracketName/player/add',
     templateUrl: 'templates/choose-player-name.html',
     controller: 'BrSetupController',
     controllerAs: 'vm'
@@ -60,8 +60,6 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     templateUrl: "templates/bracket.html",
     controller: 'bracketController',
     controllerAs: 'vm'
-
-
   })
     .state('search-bracket-name', {
     url: '/searchbracket',
