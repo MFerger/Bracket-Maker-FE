@@ -1,0 +1,72 @@
+<ion-view class='background'>
+  <ion-content class="padding">
+    <main id="tournament">
+    	<ul class="round round-1">
+    		<li class="spacer">&nbsp;</li>
+
+        <a ui-sref='round-details'>
+    		<li class="game game-top winner">{{vm.bracket.player1}}</li>
+    		<li class="game game-spacer">&nbsp;</li>
+    		<li class="game game-bottom ">{{vm.bracket.player2}}</li>
+        </a>
+
+    		<li class="spacer">&nbsp;</li>
+
+        <a ui-sref='round-details'>
+    		<li class="game game-top winner">{{vm.bracket.player3}}</li>
+    		<li class="game game-spacer">&nbsp;</li>
+    		<li class="game game-bottom ">{{vm.bracket.player4}}</li>
+      </a>
+
+    		<li class="spacer">&nbsp;</li>
+
+          <a ui-sref='round-details'>
+    		<li class="game game-top ">{{vm.bracket.player5}}</li>
+    		<li class="game game-spacer">&nbsp;</li>
+    		<li class="game game-bottom winner">{{vm.bracket.player6}}</li>
+      </a>
+
+    		<li class="spacer">&nbsp;</li>
+
+          <a ui-sref='round-details'>
+    		<li class="game game-top winner">{{vm.bracket.player7}}</li>
+    		<li class="game game-spacer">&nbsp;</li>
+    		<li class="game game-bottom ">{{vm.bracket.player8}}</li>
+      </a>
+
+    		<li class="spacer">&nbsp;</li>
+    	</ul>
+    	<ul class="round round-2">
+    		<li class="spacer">&nbsp;</li>
+
+          <a ui-sref='round-details'>
+    		<li class="game game-top winner">{{vm.bracket.player1}}</li>
+    		<li class="game game-spacer">&nbsp;</li>
+    		<li class="game game-bottom ">{{vm.bracket.player3}}</li>
+      </a>
+
+    		<li class="spacer">&nbsp;</li>
+
+          <a ui-sref='round-details'>
+    		<li class="game game-top winner">{{vm.bracket.player6}}</li>
+    		<li class="game game-spacer">&nbsp;</li>
+    		<li class="game game-bottom ">{{vm.bracket.player7}}</li>
+      </a>
+
+    		<li class="spacer">&nbsp;</li>
+
+    	</ul>
+    	<ul class="round round-3">
+    		<li class="spacer">&nbsp;</li>
+
+        <a ui-sref='round-details'>
+    		<li class="game game-top winner">{{vm.bracket.player1}}</li>
+    		<li class="game game-spacer">&nbsp;</li>
+    		<li class="game game-bottom ">{{vm.bracket.player6}}</li>
+      </a>
+
+    		<li class="spacer">&nbsp;</li>
+    	</ul>
+    </main>
+</ion-content>
+</ion-view>
