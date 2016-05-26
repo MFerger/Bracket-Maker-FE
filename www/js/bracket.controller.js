@@ -24,7 +24,6 @@
       }
 
       vm.refresh = function(){
-        console.log("should be refreshing if you see this");
           $window.location.reload();  }
 
       vm.roundDetails = function (bracketName, player1, player2, round) {
