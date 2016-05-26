@@ -38,6 +38,6 @@
           $state.go('bracket', {bracket_name: $stateParams.bracket_name})
         })
       }
-
+} 
 
 }());
