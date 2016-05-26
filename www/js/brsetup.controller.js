@@ -10,13 +10,14 @@
     var vm = this;
     vm.bracket = bracketService.bracket;
     vm.beenClicked = false;
-    
+
     vm.getBracketName = function(){
       console.log('clicked???', vm.beenClicked);
       vm.beenClicked = true;
       var create = 'create';
       bracketService.populateBracket(vm.bracket.name, vm.user.name, create)
-      .then(function () {
+      .then(function (res) {
+        console.log("WHEN DOES THIS HAPPEN?", res);
         $state.go('bracket', {bracket_name: vm.bracket.name})
       })
     }

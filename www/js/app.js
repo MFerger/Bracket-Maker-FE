@@ -23,7 +23,8 @@ angular.module('bracket', ['ionic','ionic.service.core'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+  $httpProvider.interceptors.push('ehInterceptor');
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -32,11 +33,6 @@ angular.module('bracket', ['ionic','ionic.service.core'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
-    // url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
     .state('home', {
     url: '/',
     templateUrl: 'templates/homePage.html',
@@ -74,12 +70,21 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     controller: 'bracketController',
     controllerAs: 'vm'
   })
+    .state('error', {
+      url: "/error",
+      templateUrl: 'templates/error.html'
+    })
 
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
 
 })
+
+.factory('ehInterceptor', ehInterceptor)
+
+
+
 .controller('appController', appController)
 function appController ($scope, $location, $ionicNavBarDelegate){
   var vm = this;
@@ -94,4 +99,21 @@ function appController ($scope, $location, $ionicNavBarDelegate){
     vm.bracketView = false;
     }
   }
+}
+
+// ehInterceptor.$inject = ['$log', '$state'];
+
+function ehInterceptor ($log, $injector, $location) {
+return {
+  responseError: function (response) {
+    if (response.status === 400){
+      console.log(response);
+      // $injector.get('$state').go('error')
+      $location.path('/error')
+      alert ('ABANDON HOPE ALL YE WHO ENTER')
+
+    }
+
+  }
+}
 }
