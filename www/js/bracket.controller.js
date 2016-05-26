@@ -4,8 +4,8 @@
   angular.module('bracket')
     .controller('bracketController', bracketController);
 
-    bracketController.$inject = ['$log', 'bracketService', '$http', '$stateParams', '$state'];
-    function bracketController($log, bracketService, $http, $stateParams, $state) {
+    bracketController.$inject = ['$log', 'bracketService', '$http', '$stateParams', '$state', '$window'];
+    function bracketController($log, bracketService, $http, $stateParams, $state, $window) {
       var vm = this;
       if ($stateParams.player1_id && $stateParams.player2_id) {
         $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/player/' + $stateParams.player1_id).then(function(user1Obj){
@@ -23,6 +23,10 @@
         })
       }
 
+      vm.refresh = function(){
+        console.log("should be refreshing if you see this");
+          $window.location.reload();  }
+
       vm.roundDetails = function (bracketName, player1, player2, round) {
         $state.go('round-details', {player1_id: player1._id, player2_id: player2._id, bracket_name: bracketName, round: round})
       }
@@ -39,5 +43,6 @@
         })
       }
 } 
+
 
 }());

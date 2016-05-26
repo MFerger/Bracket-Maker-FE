@@ -10,14 +10,7 @@
     var vm = this;
     vm.bracket = bracketService.bracket;
     vm.beenClicked = false;
-    var path = $location.path();
-    console.log("path:", path);
-    if (path.indexOf('bracket') !=-1){
-      $ionicNavBarDelegate.showBackButton(true);
-    }  else {
-        $ionicNavBarDelegate.showBackButton(false)
-      }
-
+    
     vm.getBracketName = function(){
       console.log('clicked???', vm.beenClicked);
       vm.beenClicked = true;

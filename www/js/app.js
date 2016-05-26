@@ -82,11 +82,16 @@ angular.module('bracket', ['ionic','ionic.service.core'])
 })
 .controller('appController', appController)
 function appController ($scope, $location, $ionicNavBarDelegate){
+  var vm = this;
+  vm.disableBackButton = function(){
   var path = $location.path();
   console.log("path:", path);
   if (path.indexOf('bracket') !=-1){
-    $ionicNavBarDelegate.showBackButton(false);
+    console.log("This log means bracket is in the path");
+    vm.bracketView = true;
   }  else {
-      $ionicNavBarDelegate.showBackButton(true)
+    console.log("This log means bracket is not in the path");
+    vm.bracketView = false;
     }
+  }
 }
