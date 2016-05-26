@@ -24,7 +24,6 @@
       }
 
       vm.refresh = function(){
-        console.log("should be refreshing if you see this");
           $window.location.reload();  }
 
       vm.roundDetails = function (bracketName, player1, player2, round) {
@@ -93,6 +92,13 @@
           $state.go('bracket', {bracket_name: $stateParams.bracket_name})
         })
       }
+
+
+      vm.addMorePlayers = function(){
+        $state.go('choose-player-name', {bracketName: vm.bracket[0].bracket_name});
+
+      }
+
 }
 
 
