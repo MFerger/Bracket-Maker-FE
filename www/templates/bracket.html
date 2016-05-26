@@ -41,7 +41,8 @@
     	<ul class="round round-2">
     		<li class="spacer">&nbsp;</li>
 
-          <a ui-sref='round-details'>
+          <!-- <a ui-sref='round-details'> -->
+        <span ng-click='vm.roundDetails2(vm.bracket, 1)'>
     		<li class="game game-top winner">
           <span ng-repeat="player in vm.bracket">
             <span ng-if="player.initial_location === 'N1' && player.round1">{{player.user_name}}</span>
@@ -55,11 +56,13 @@
             <span ng-if="player.initial_location === 'N4' && player.round1">{{player.user_name}}</span>
           </span>
         </li>
-      </a>
+        </span>
+      <!-- </a> -->
 
     		<li class="spacer">&nbsp;</li>
 
-          <a ui-sref='round-details'>
+          <!-- <a ui-sref='round-details'> -->
+            <span ng-click='vm.roundDetails2(vm.bracket, 2)'>
     		<li class="game game-top winner">
           <span ng-repeat="player in vm.bracket">
             <span ng-if="player.initial_location === 'S1' && player.round1">{{player.user_name}}</span>
@@ -73,7 +76,7 @@
             <span ng-if="player.initial_location === 'S4' && player.round1">{{player.user_name}}</span>
           </span>
         </li>
-      </a>
+      <!-- </a> -->
 
     		<li class="spacer">&nbsp;</li>
 
@@ -81,7 +84,9 @@
     	<ul class="round round-3">
     		<li class="spacer">&nbsp;</li>
 
-        <a ui-sref='round-details'>
+        <!-- <a ui-sref='round-details'> -->
+        <span ng-click='vm.roundDetails3(vm.bracket)'>
+
     		<li class="game game-top winner">
           <span ng-repeat="player in vm.bracket">
             <span ng-if="player.initial_location === 'N1' && player.round2">{{player.user_name}}</span>
@@ -99,12 +104,13 @@
             <span ng-if="player.initial_location === 'S4' && player.round2">{{player.user_name}}</span>
           </span>
         </li>
-      </a>
+      </span>
+      <!-- </a> -->
 
     		<li class="spacer">&nbsp;</li>
     	</ul>
     </main>
-    <button ng-click="vm.refresh()">Refresh Bracket</button>
-    <button ng-click="vm.addMorePlayers()">Add a player</button>
+    <button class='btn btn-warning text-center' ng-click="vm.refresh()">Refresh Bracket</button>
+    <button class='btn btn-warning text-center' ng-click="vm.addMorePlayers()">Add more players</button>
 </ion-content>
 </ion-view>

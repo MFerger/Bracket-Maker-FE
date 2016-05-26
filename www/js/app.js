@@ -56,7 +56,6 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     templateUrl: "templates/bracket.html",
     controller: 'bracketController',
     controllerAs: 'vm',
-    disableBackButton: true
   })
     .state('search-bracket-name', {
     url: '/searchbracket',
