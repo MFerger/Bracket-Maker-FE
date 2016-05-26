@@ -14,14 +14,24 @@
     //   }
     // }
 
-    bracketController.$inject = ['$log', 'bracketService', '$http', '$stateParams'];
+    bracketController.$inject = ['$log', 'bracketService', '$http', '$stateParams', '$state', '$window', '$scope', '$location', '$ionicNavBarDelegate'];
 
-    function bracketController($log, bracketService, $http, $stateParams) {
+    function bracketController($log, bracketService, $http, $stateParams, $state, $window, $scope, $location, $ionicNavBarDelegate) {
       var vm = this;
       console.log('state params', $stateParams);
       $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/bracket/' + $stateParams.bracket_name).then(function(bracket){
         vm.bracket = bracket.data;
       })
+      var path = $location.path();
+      console.log("path:", path);
+      if (path.indexOf('bracket') !=-1){
+        $ionicNavBarDelegate.showBackButton(true);
+      }  else {
+          $ionicNavBarDelegate.showBackButton(false)
+        }
+      vm.refresh = function(){
+        console.log("should be refreshing if you see this");
+          $window.location.reload();  }
 
     }
 
