@@ -4,8 +4,8 @@
   angular.module('bracket')
     .controller('bracketController', bracketController);
 
-    bracketController.$inject = ['$log', 'bracketService', '$http', '$stateParams', '$state'];
-    function bracketController($log, bracketService, $http, $stateParams, $state) {
+    bracketController.$inject = ['$log', 'bracketService', '$http', '$stateParams', '$state', '$window'];
+    function bracketController($log, bracketService, $http, $stateParams, $state, $window) {
       var vm = this;
       if ($stateParams.player1_id && $stateParams.player2_id) {
         $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/player/' + $stateParams.player1_id).then(function(user1Obj){
@@ -42,6 +42,7 @@
           $state.go('bracket', {bracket_name: $stateParams.bracket_name})
         })
       }
+    }
 
 
 }());
