@@ -1,20 +1,19 @@
 <ion-view class='background'>
   <ion-content class="padding">
-<h1 class='text-center'>Player 1</h1>
+<h1 class='text-center'>{{vm.player1.user_name}}</h1>
 <h4 class='text-center'>vs</h4>
-<h1 class='text-center'>Player 2</h1>
+<h1 class='text-center'>{{vm.player2.user_name}}</h1>
 <div class="list">
   <label id='round-details-label' class="item item-input item-select inputBoxes">
     <div class="input-label">
       Who won the match?
     </div>
-    <select>
-      <option>Player 1</option>
-      <option>Player 2</option>
+    <select ng-model='winner'>
+      <option ng-value='vm.player1.initial_location'>{{vm.player1.user_name}}</option>
+      <option ng-value='vm.player2.initial_location'>{{vm.player2.user_name}}</option>
     </select>
   </label>
 </div>
-<button type="button" id='submitWinner' class='btn btn-warning middle3'>Submit Winner</button>
-<a ui-sref='bracket' type="button" id='bracketButton' class='btn btn-warning middle2'> <i class='ion-arrow-left-c'></i> Go back!</a>
+<button type="button" id='submitWinner' ng-click='vm.selectWinner(winner)' class='btn btn-warning middle3'>Submit Winner</button>
 </ion-content>
 </ion-view>

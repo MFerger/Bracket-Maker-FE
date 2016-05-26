@@ -1,16 +1,15 @@
 <ion-view class='background'>
   <ion-content class="padding">
-    <!-- <h5>{{vm.bracket}}</h5> -->
     <h1>{{vm.bracket[0].bracket_name}}</h1>
     <main id="tournament">
     	<ul class="round round-1">
     		<li class="spacer">&nbsp;</li>
 
-        <a ui-sref='round-details'>
+        <a ng-click='vm.roundDetails(vm.bracket[0].bracket_name, vm.bracket[0], vm.bracket[1], "round1")'>
     		<li class="game game-top winner">{{vm.bracket[0].user_name}}</li>
     		<li class="game game-spacer">&nbsp;</li>
     		<li class="game game-bottom ">{{vm.bracket[1].user_name}}</li>
-        </a>
+      </a>
 
     		<li class="spacer">&nbsp;</li>
 

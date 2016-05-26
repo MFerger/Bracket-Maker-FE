@@ -1,0 +1,9 @@
+<ion-view class='background'>
+  <ion-content class="padding">
+      <label id='inputBox1' class="item item-input item-stacked-label inputBoxes">
+        <span class="input-label">Enter the Bracket ID Key</span>
+        <input type="text" ng-model="vm.bracket.name" value="" placeholder="0123456789">
+      </label>
+      <a ui-sref='choose-player-name({bracketId: vm.bracket.name})' id='bracketButton' type="button" class='btn btn-warning middle2'>Get a name! <i class='ion-arrow-right-c'></i></a>
+</ion-content>
+</ion-view>

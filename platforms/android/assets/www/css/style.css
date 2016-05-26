@@ -1,0 +1,119 @@
+/* Empty. Add your own CSS if you like */
+main{
+  display:flex;
+  flex-direction:row;
+  padding-right:15px;
+}
+.round{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:200px;
+  list-style:none;
+  padding:0;
+}
+  .round .spacer{ flex-grow:1; }
+  .round .spacer:first-child,
+  .round .spacer:last-child{ flex-grow:.5; }
+
+  .round .game-spacer{
+    flex-grow:1;
+  }
+
+/*
+ *  General Styles
+*/
+body{
+  font-family:sans-serif;
+  font-size:small;
+  padding:10px;
+  line-height:1.4em;
+  background-color: rgb(127, 172, 245);
+}
+
+li {
+  color: rgb(182, 97, 8);
+}
+
+li.game{
+  padding-left:20px;
+}
+
+  li.game.winner{
+    font-weight:bold;
+  }
+  li.game span{
+    float:right;
+    margin-right:5px;
+  }
+
+  li.game-top{ border-bottom:1px solid #ffffff; }
+
+  li.game-spacer{
+    border-right:1px solid #ffffff;
+    min-height:40px;
+  }
+
+  li.game-bottom{
+    border-top:1px solid #ffffff;
+  }
+.background {
+  background-color: rgb(127, 172, 245);
+}
+.navBackground {
+  background-color: rgb(0, 55, 138);
+}
+.white {
+  color: white;
+}
+#createButton, #joinButton {
+  margin: 2.5%;
+  width: 85vw;
+  height: 30vh;
+}
+#bracketButton {
+  margin: 2.5%;
+  width: 85vw;
+  height: 20vh;
+}
+#createButton {
+  margin-top: 15vh;
+}
+.middle {
+  padding-top: 20%;
+  font-size: 30px;
+}
+.middle2 {
+  padding-top: 10%;
+  font-size: 30px;
+}
+.middle3 {
+  padding-top: 2%;
+  font-size: 20px;
+}
+.center {
+  text-align: center;
+}
+.inputBoxes {
+  margin-right: 5%;
+}
+
+#inputBox1, #inputBox2 {
+  margin-top: 15%;
+}
+
+#bracketButton {
+  margin-top: 20%;
+}
+
+#round-details-label {
+  margin-top: 10%;
+}
+
+#submitWinner {
+  width: 50vw;
+  height: 10vh;
+  align: auto;
+  margin-left: 22%;
+  margin-top: 5%;
+}

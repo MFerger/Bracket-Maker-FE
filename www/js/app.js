@@ -68,8 +68,10 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     controllerAs: 'vm'
   })
     .state('round-details', {
-    url: '/rounddetails',
-    templateUrl: 'templates/round-details.html'
+    url: '/rounddetails/:player1_id/:player2_id/:bracket_name/:round',
+    templateUrl: 'templates/round-details.html',
+    controller: 'bracketController',
+    controllerAs: 'vm'
   })
 
 
