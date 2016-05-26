@@ -10,7 +10,11 @@
     var vm = this;
     vm.bracket = bracketService.bracket;
     vm.beenClicked = false;
-    
+    vm.bracket = {};
+    if ($stateParams.bracketName) {
+      vm.bracket.name = $stateParams.bracketName;
+    }
+
     vm.getBracketName = function(){
       console.log('clicked???', vm.beenClicked);
       vm.beenClicked = true;
@@ -24,12 +28,13 @@
 
     vm.setPlayerName = function () {
       console.log('clicked???', vm.beenClicked);
+      console.log('bracket name should be:', $stateParams.bracketName);
       vm.beenClicked = true;
       var join = 'join';
       bracketService.populateBracket($stateParams.bracketName, vm.user.name, join)
-        .then(function () {
-          $state.go('bracket', {bracket_name: $stateParams.bracketName})
-        })
+      .then(function () {
+        $state.go('bracket', {bracket_name: $stateParams.bracketName})
+      })
     }
 
     vm.setBracketName = function() {
@@ -37,13 +42,15 @@
       vm.beenClicked = true;
 
       return $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/bracket/' + vm.bracket.name)
-        .then(function (response) {
-          if(response.status === 200) {
-            $state.go('choose-player-name', {bracketName: vm.bracket.name});
-          } else {
-            console.log('it shouldnt get here');
-          }
-        })
+      .then(function (response) {
+        if(response.status === 200) {
+          console.log("current bracket name:", vm.bracket.name);
+
+          $state.go('choose-player-name', {bracketName: vm.bracket.name});
+        } else {
+          console.log('it shouldnt get here');
+        }
+      })
     }
   }
 }());
