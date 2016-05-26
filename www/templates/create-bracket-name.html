@@ -1,4 +1,9 @@
 <ion-view class='background'>
+  <ion-nav-bar class="bar bar-header navBackground">
+    <ion-nav-title class="white">Bracket Maker</ion-nav-title>
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+
   <ion-content class="padding">
 <form ng-submit='vm.getBracketName()'>
 <div class="list">
@@ -9,8 +14,11 @@
   <label class="item item-input item-stacked-label inputBoxes" id='inputBox2'>
     <span class="input-label">Create a Player Name</span>
     <input type="text" ng-model='vm.user.name' placeholder="Cool Player">
+
   </label>
-  <input type="submit" id='bracketButton' class='btn btn-warning middle2'> Go to bracket! <i class='ion-arrow-right-c'></i>
+  <input ng-disabled="vm.beenClicked" type="submit" id='bracketButton' class='btn btn-warning middle2'> Go to bracket! <i class='ion-arrow-right-c'></i>
+  <p ng-show="vm.beenClicked">Loading, calm yo tits, dude.</p>
+
 </div>
 </form>
 </ion-content>

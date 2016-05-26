@@ -37,8 +37,7 @@
         }).then(function(){
           $state.go('bracket', {bracket_name: $stateParams.bracket_name})
         })
-
       }
-    }
+
 
 }());

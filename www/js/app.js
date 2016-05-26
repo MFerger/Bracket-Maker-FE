@@ -59,7 +59,8 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     url: '/bracket/:bracket_name',
     templateUrl: "templates/bracket.html",
     controller: 'bracketController',
-    controllerAs: 'vm'
+    controllerAs: 'vm',
+    disableBackButton: true
   })
     .state('search-bracket-name', {
     url: '/searchbracket',
@@ -75,8 +76,17 @@ angular.module('bracket', ['ionic','ionic.service.core'])
   })
 
 
-
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
 
-});
+})
+.controller('appController', appController)
+function appController ($scope, $location, $ionicNavBarDelegate){
+  var path = $location.path();
+  console.log("path:", path);
+  if (path.indexOf('bracket') !=-1){
+    $ionicNavBarDelegate.showBackButton(false);
+  }  else {
+      $ionicNavBarDelegate.showBackButton(true)
+    }
+}
