@@ -9,9 +9,12 @@
   function brsetupController(bracketService, $state, $http, $stateParams) {
     var vm = this;
     vm.bracket = bracketService.bracket;
+    vm.beenClicked = false;
 
 
     vm.getBracketName = function(){
+      console.log('clicked???', vm.beenClicked);
+      vm.beenClicked = true;
       var create = 'create';
       bracketService.populateBracket(vm.bracket.name, vm.user.name, create)
       .then(function () {
@@ -21,6 +24,8 @@
 
 
     vm.setPlayerName = function () {
+      console.log('clicked???', vm.beenClicked);
+      vm.beenClicked = true;
       var join = 'join';
       bracketService.populateBracket($stateParams.bracketName, vm.user.name, join)
         .then(function () {
@@ -29,6 +34,7 @@
     }
 
     vm.setBracketName = function() {
+
       return $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/bracket/' + vm.bracket.name)
         .then(function (response) {
           if(response.status === 200) {
