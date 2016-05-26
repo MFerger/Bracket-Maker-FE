@@ -27,7 +27,8 @@
         console.log("should be refreshing if you see this");
           $window.location.reload();  }
 
-      vm.roundDetails = function (bracketName, player1, player2, round) {
+      vm.roundDetails = function (bracketName, player1) {
+        console.log('data from the object', player1);
         $state.go('round-details', {player1_id: player1._id, player2_id: player2._id, bracket_name: bracketName, round: round})
       }
 
@@ -42,7 +43,7 @@
           $state.go('bracket', {bracket_name: $stateParams.bracket_name})
         })
       }
-} 
+}
 
 
 }());

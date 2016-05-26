@@ -1,5 +1,5 @@
 <ion-view class='background'>
-  
+
   <ion-content class="padding">
     <h1>{{vm.bracket[0].bracket_name}}</h1>
     <main id="tournament">
@@ -44,7 +44,7 @@
           <a ui-sref='round-details'>
     		<li class="game game-top winner">
           <span ng-repeat="player in vm.bracket">
-            <span ng-if="player.initial_location === 'N1' && player.round1">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'N1' && player.round1"><span ng-click=''>{{player.user_name}}</span></span>
             <span ng-if="player.initial_location === 'N2' && player.round1">{{player.user_name}}</span>
           </span>
         </li>
