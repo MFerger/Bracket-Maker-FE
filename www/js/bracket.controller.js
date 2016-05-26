@@ -42,7 +42,12 @@
           $state.go('bracket', {bracket_name: $stateParams.bracket_name})
         })
       }
-} 
+
+      vm.addMorePlayers = function(){
+        $state.go('choose-player-name', {bracketName: vm.bracket[0].bracket_name});
+
+      }
+}
 
 
 }());
