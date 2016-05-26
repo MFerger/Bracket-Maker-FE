@@ -12,33 +12,33 @@
     		<li class="spacer">&nbsp;</li>
 
         <a ui-sref='round-details'>
-    		<li class="game game-top winner">{{vm.bracket[0].user_name}}</li>
+    		<li class="game game-top winner"><span ng-repeat="player in vm.bracket"><span ng-if="player.initial_location === 'N1'">{{player.user_name}}</span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">{{vm.bracket[1].user_name}}</li>
+    		<li class="game game-bottom "><span ng-repeat="player in vm.bracket"><span ng-if="player.initial_location === 'N2'">{{player.user_name}}</span></span></li>
         </a>
 
     		<li class="spacer">&nbsp;</li>
 
         <a ui-sref='round-details'>
-    		<li class="game game-top winner">{{vm.bracket[2].user_name}}</li>
+    		<li class="game game-top winner"><span ng-repeat="player in vm.bracket"><span ng-if="player.initial_location === 'N3'">{{player.user_name}}</span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">{{vm.bracket[3].user_name}}</li>
+    		<li class="game game-bottom "><span ng-repeat="player in vm.bracket"><span ng-if="player.initial_location === 'N4'">{{player.user_name}}</span></span></li>
       </a>
 
     		<li class="spacer">&nbsp;</li>
 
           <a ui-sref='round-details'>
-    		<li class="game game-top ">{{vm.bracket[4].user_name}}</li>
+    		<li class="game game-top "><span ng-repeat="player in vm.bracket"><span ng-if="player.initial_location === 'S1'">{{player.user_name}}</span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom winner">{{vm.bracket[5].user_name}}</li>
+    		<li class="game game-bottom winner"><span ng-repeat="player in vm.bracket"><span ng-if="player.initial_location === 'S2'">{{player.user_name}}</span></span></li>
       </a>
 
     		<li class="spacer">&nbsp;</li>
 
           <a ui-sref='round-details'>
-    		<li class="game game-top winner">{{vm.bracket[6].user_name}}</li>
+    		<li class="game game-top winner"><span ng-repeat="player in vm.bracket"><span ng-if="player.initial_location === 'S3'">{{player.user_name}}</span></span></li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">{{vm.bracket[7].user_name}}</li>
+    		<li class="game game-bottom "><span ng-repeat="player in vm.bracket"><span ng-if="player.initial_location === 'S4'">{{player.user_name}}</span></span></li>
       </a>
 
     		<li class="spacer">&nbsp;</li>
@@ -47,17 +47,37 @@
     		<li class="spacer">&nbsp;</li>
 
           <a ui-sref='round-details'>
-    		<li class="game game-top winner"></li>
+    		<li class="game game-top winner">
+          <span ng-repeat="player in vm.bracket">
+            <span ng-if="player.initial_location === 'N1' && player.round1">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'N2' && player.round1">{{player.user_name}}</span>
+          </span>
+        </li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom "></li>
+    		<li class="game game-bottom ">
+          <span ng-repeat="player in vm.bracket">
+            <span ng-if="player.initial_location === 'N3' && player.round1">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'N4' && player.round1">{{player.user_name}}</span>
+          </span>
+        </li>
       </a>
 
     		<li class="spacer">&nbsp;</li>
 
           <a ui-sref='round-details'>
-    		<li class="game game-top winner"></li>
+    		<li class="game game-top winner">
+          <span ng-repeat="player in vm.bracket">
+            <span ng-if="player.initial_location === 'S1' && player.round1">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'S2' && player.round1">{{player.user_name}}</span>
+          </span>
+        </li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom "></li>
+    		<li class="game game-bottom ">
+          <span ng-repeat="player in vm.bracket">
+            <span ng-if="player.initial_location === 'S3' && player.round1">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'S4' && player.round1">{{player.user_name}}</span>
+          </span>
+        </li>
       </a>
 
     		<li class="spacer">&nbsp;</li>
@@ -67,9 +87,23 @@
     		<li class="spacer">&nbsp;</li>
 
         <a ui-sref='round-details'>
-    		<li class="game game-top winner"></li>
+    		<li class="game game-top winner">
+          <span ng-repeat="player in vm.bracket">
+            <span ng-if="player.initial_location === 'N1' && player.round2">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'N2' && player.round2">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'N3' && player.round2">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'N4' && player.round2">{{player.user_name}}</span>
+          </span>
+        </li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom "></li>
+    		<li class="game game-bottom ">
+          <span ng-repeat="player in vm.bracket">
+            <span ng-if="player.initial_location === 'S1' && player.round2">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'S2' && player.round2">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'S3' && player.round2">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'S4' && player.round2">{{player.user_name}}</span>
+          </span>
+        </li>
       </a>
 
     		<li class="spacer">&nbsp;</li>
