@@ -75,7 +75,6 @@
                 playerArr.push(player);
               }
               if (player.round2 && (player.initial_location === 'S1' || player.initial_location === 'S2' || player.initial_location === 'S3' || player.initial_location === 'S4' )) {
-                console.log('playersssssss', player);
                 playerArr.push(player);
               }
 

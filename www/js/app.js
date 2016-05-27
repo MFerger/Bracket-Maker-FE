@@ -23,20 +23,19 @@ angular.module('bracket', ['ionic','ionic.service.core'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+  $httpProvider.interceptors.push('ehInterceptor');
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
+  // $state.transitionTo($state.current, $state.$current.params, { reload: true, inherit: true, notify: true });//reload
+
+
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
-    // url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
     .state('home', {
     url: '/',
     templateUrl: 'templates/homePage.html',
@@ -56,6 +55,7 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     controllerAs: 'vm'
   })
     .state('bracket', {
+    cache: false,
     url: '/bracket/:bracket_name',
     templateUrl: "templates/bracket.html",
     controller: 'bracketController',
@@ -80,12 +80,21 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     controller: 'bracketController',
     controllerAs: 'vm'
   })
+    .state('error', {
+      url: "/error",
+      templateUrl: 'templates/error.html'
+    })
 
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
 
 })
+
+.factory('ehInterceptor', ehInterceptor)
+
+
+
 .controller('appController', appController)
 function appController ($scope, $location, $ionicNavBarDelegate){
   var vm = this;
@@ -100,4 +109,21 @@ function appController ($scope, $location, $ionicNavBarDelegate){
     vm.bracketView = false;
     }
   }
+}
+
+// ehInterceptor.$inject = ['$log', '$state'];
+
+function ehInterceptor ($log, $injector, $location) {
+return {
+  responseError: function (response) {
+    if (response.status === 400){
+      console.log(response);
+      // $injector.get('$state').go('error')
+      $location.path('/error');
+      alert ("ERROR: \n" + response.data.error + "\n TRY AGAIN, FOOL")
+
+    }
+
+  }
+}
 }

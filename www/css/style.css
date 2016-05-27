@@ -4,11 +4,13 @@ main{
   flex-direction:row;
   padding-right:15px;
 }
+
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+
 .round{
   display:flex;
   flex-direction:column;
@@ -44,9 +46,9 @@ li.game{
   padding-left:20px;
 }
 
-  li.game.winner{
+  /*li.game.winner{
     font-weight:bold;
-  }
+  }*/
   li.game span{
     float:right;
     margin-right:5px;
@@ -74,7 +76,7 @@ li.game{
 #createButton, #joinButton {
   margin: 2.5%;
   width: 85vw;
-  height: 30vh;
+  height: 200px;
 }
 #bracketButton {
   margin: 2.5%;
@@ -85,7 +87,7 @@ li.game{
   margin-top: 15vh;
 }
 .middle {
-  padding-top: 20%;
+  padding-top: 70px;
   font-size: 30px;
 }
 .middle2 {
@@ -122,4 +124,8 @@ li.game{
   align: auto;
   margin-left: 22%;
   margin-top: 5%;
+}
+
+#topPlayer {
+  color: rgb(0, 55, 138);
 }

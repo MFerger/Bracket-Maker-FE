@@ -18,6 +18,9 @@
           return $http.post('https://damp-eyrie-43620.herokuapp.com/api/v1/bracket/'+ method, {
             bracket_name: bracketName,
             user_name: userName
+          }).then(function (res) {
+            console.log("WHO EVEN KNOWS", res);
+
           })
         }
       }
