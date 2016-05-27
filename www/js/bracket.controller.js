@@ -20,6 +20,7 @@
       if (!$stateParams.player1_id && !$stateParams.player2_id) {
         console.log('called again');
         $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/bracket/' + $stateParams.bracket_name).then(function(bracket){
+          console.log("bracket: ", bracket);
           vm.bracket = bracket.data;
         })
       }
@@ -74,7 +75,7 @@
                 console.log('playerz: ', player);
                 playerArr.push(player);
               }
-              if (player.round2 && (player.initial_location === 'N1' || player.initial_location === 'N2' || player.initial_location === 'N3' || player.initial_location === 'N4' )){
+              if (player.round2 && (player.initial_location === 'S1' || player.initial_location === 'S2' || player.initial_location === 'S3' || player.initial_location === 'S4' )){
                 playerArr.push(player);
 
               }
