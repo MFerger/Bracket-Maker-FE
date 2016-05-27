@@ -30,6 +30,9 @@ angular.module('bracket', ['ionic','ionic.service.core'])
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
+  // $state.transitionTo($state.current, $state.$current.params, { reload: true, inherit: true, notify: true });//reload
+
+
   $stateProvider
 
   // setup an abstract state for the tabs directive
@@ -52,6 +55,7 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     controllerAs: 'vm'
   })
     .state('bracket', {
+    cache: false,
     url: '/bracket/:bracket_name',
     templateUrl: "templates/bracket.html",
     controller: 'bracketController',
@@ -108,8 +112,8 @@ return {
     if (response.status === 400){
       console.log(response);
       // $injector.get('$state').go('error')
-      $location.path('/error')
-      alert ('ABANDON HOPE ALL YE WHO ENTER')
+      $location.path('/error');
+      alert ("ERROR: \n" + response.data.error + "\n TRY AGAIN, FOOL")
 
     }
 
