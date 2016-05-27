@@ -4,10 +4,10 @@
   angular.module('bracket')
     .controller('bracketController', bracketController);
 
-    bracketController.$inject = ['$log', 'bracketService', '$http', '$stateParams', '$state', '$window'];
-    function bracketController($log, bracketService, $http, $stateParams, $state, $window) {
+    bracketController.$inject = ['$log', 'bracketService', '$http', '$stateParams', '$state', '$window', '$rootScope'];
+    function bracketController($log, bracketService, $http, $stateParams, $state, $window, $rootScope) {
       var vm = this;
-      vm.winnerDude = 'NOT poopp';
+      vm.bracketFull = false;
       if ($stateParams.player1_id && $stateParams.player2_id) {
         $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/player/' + $stateParams.player1_id).then(function(user1Obj){
           vm.player1 = user1Obj.data;
@@ -17,11 +17,17 @@
         })
       }
 
-      if (!$stateParams.player1_id && !$stateParams.player2_id) {
-        console.log('called again');
+      if ((!$stateParams.player1_id && !$stateParams.player2_id) && !$stateParams.winnerName) {
+        console.log("vm.winnerDude from line 21: ", vm.winnerDude);
+        console.log('stateParams.round from line 22: ', $stateParams.round);
+
         $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/bracket/' + $stateParams.bracket_name).then(function(bracket){
           console.log("bracket: ", bracket);
           vm.bracket = bracket.data;
+          if (bracket.data.length === 8){
+            vm.bracketFull = true;
+          }
+          console.log("bracket.data.length: ", bracket.data.length);
         })
       }
 
@@ -96,20 +102,24 @@
           if($stateParams.round !== 'round3'){
             $state.go('bracket', {bracket_name: $stateParams.bracket_name})
           } else {
-
             $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/bracket/' + $stateParams.bracket_name).then(function(bracket){
               vm.bracket = bracket.data;
-              console.log(vm.bracket);
+
+              console.log("stateParams.bracket_name:", $stateParams.bracket_name);
               var winnerDude = vm.bracket.find(function (item) {
                 return item.initial_location === winner
               })
-              vm.winnerDude = winnerDude.user_name
-              console.log('probz not working,', vm.winnerDude);
-              $state.go('winner', {winnerName: vm.winnerDude})
-            })
+              $rootScope.winnerDude = winnerDude.user_name
+          console.log('vm.winnerDude from line 114: ', $rootScope.winnerDude);
+          console.log('stateParams.round: ', $stateParams.round);
+          $state.go('winner', {winnerName: $rootScope.winnerDude})
+
+        })
+          console.log('vm.winnerDude from line 119 :', $rootScope.winnerDude);
           }
         })
       }
+
       vm.addMorePlayers = function(){
         $state.go('choose-player-name', {bracketName: vm.bracket[0].bracket_name});
 

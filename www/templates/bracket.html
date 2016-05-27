@@ -100,12 +100,12 @@
           <li class="game game-top">
         </li>
     		<li class="game game-spacer">&nbsp;</li>
-    		<li class="game game-bottom ">
+    		<li class="game game-bottom">
           <span ng-repeat="player in vm.bracket">
-            <span id="topPlayer" ng-if="player.initial_location === 'S1' && player.round2">{{player.user_name}}</span>
-            <span id="topPlayer" ng-if="player.initial_location === 'S2' && player.round2">{{player.user_name}}</span>
-            <span id="topPlayer" ng-if="player.initial_location === 'S3' && player.round2">{{player.user_name}}</span>
-            <span id="topPlayer" ng-if="player.initial_location === 'S4' && player.round2">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'S1' && player.round2">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'S2' && player.round2">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'S3' && player.round2">{{player.user_name}}</span>
+            <span ng-if="player.initial_location === 'S4' && player.round2">{{player.user_name}}</span>
           </span>
         </li>
       </a>
@@ -115,6 +115,6 @@
     	</ul>
     </main>
     <button class='btn btn-warning text-center' ng-click="vm.refresh()">Refresh Bracket</button>
-    <button class='btn btn-warning text-center' ng-click="vm.addMorePlayers()">Add more players</button>
+    <button class='btn btn-warning text-center' ng-hide="vm.bracketFull" ng-click="vm.addMorePlayers()">Add more players</button>
 </ion-content>
 </ion-view>

@@ -12,8 +12,10 @@
     <input type="text" ng-model='vm.user.name' placeholder="Cool Player">
 
   </label>
-  <input ng-disabled="vm.beenClicked" type="submit" id='bracketButton' class='btn btn-warning middle2'> Go to bracket! <i class='ion-arrow-right-c'></i>
-  <p ng-show="vm.beenClicked">Loading, calm yo tits, dude.</p>
+  <input ng-disabled="vm.beenClicked" type="submit" id='bracketButton' class='btn btn-warning middle2' value="Go to bracket!">
+  <input ui-sref='home' id='bracketButton' type="button" class='btn btn-warning middle2' value="Go back home">
+
+  <p ng-show="vm.beenClicked">Loading, dude.</p>
 
 </div>
 </form>

@@ -75,7 +75,6 @@ angular.module('bracket', ['ionic','ionic.service.core'])
   })
     .state('winner', {
     url: '/winner/:winnerName',
-    cache: false,
     templateUrl: 'templates/winner.html',
     controller: 'bracketController',
     controllerAs: 'vm'
@@ -116,8 +115,7 @@ function appController ($scope, $location, $ionicNavBarDelegate){
 function ehInterceptor ($log, $injector, $location) {
 return {
   responseError: function (response) {
-    if (response.status === 400){
-      console.log(response);
+    if (response.status >= 400 ){
       // $injector.get('$state').go('error')
       $location.path('/error');
       alert ("ERROR: \n" + response.data.error + "\n TRY AGAIN, FOOL")
