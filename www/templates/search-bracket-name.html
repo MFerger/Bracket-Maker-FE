@@ -1,15 +1,12 @@
 <ion-view class='background'>
-  
-
   <ion-content class="padding">
     <form ng-submit='vm.setBracketName()'>
       <label id='inputBox1' class="item item-input item-stacked-label inputBoxes">
         <span class="input-label">Enter the Bracket Name</span>
         <input type="text" ng-model="vm.bracket.name" value="" placeholder="Some bracket name">
       </label>
-      <input ng-disabled="vm.beenClicked" id='bracketButton' type="submit" class='btn btn-warning middle2'>Get a name! <i class='ion-arrow-right-c'></i>
-      <p ng-show="vm.beenClicked">Loading, calm yo tits, dude.</p>
-
+      <input ng-disabled="vm.beenClicked" id='bracketButton' type="submit" class='btn btn-warning middle2' value="Go to your bracket!">
+      <p ng-show="vm.beenClicked">Loading, dude.</p>
     </form>
 </ion-content>
 </ion-view>

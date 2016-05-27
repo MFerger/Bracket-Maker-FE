@@ -60,7 +60,6 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     templateUrl: "templates/bracket.html",
     controller: 'bracketController',
     controllerAs: 'vm',
-    disableBackButton: true
   })
     .state('search-bracket-name', {
     url: '/searchbracket',
@@ -71,6 +70,13 @@ angular.module('bracket', ['ionic','ionic.service.core'])
     .state('round-details', {
     url: '/rounddetails/:player1_id/:player2_id/:bracket_name/:round',
     templateUrl: 'templates/round-details.html',
+    controller: 'bracketController',
+    controllerAs: 'vm'
+  })
+    .state('winner', {
+    url: '/winner/:winnerName',
+    cache: false,
+    templateUrl: 'templates/winner.html',
     controller: 'bracketController',
     controllerAs: 'vm'
   })
