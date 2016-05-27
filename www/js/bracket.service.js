@@ -19,7 +19,6 @@
             bracket_name: bracketName,
             user_name: userName
           }).then(function (res) {
-            console.log("WHO EVEN KNOWS", res);
 
           })
         }

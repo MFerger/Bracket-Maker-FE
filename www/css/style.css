@@ -106,12 +106,12 @@ li.game{
 }
 
 #inputBox1, #inputBox2 {
-  margin-top: 15%;
+  margin-top: 2%;
   border: none;
 }
 
 #bracketButton {
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
 #round-details-label {
@@ -128,4 +128,5 @@ li.game{
 
 #topPlayer {
   color: rgb(0, 55, 138);
+  margin-left: 5%;
 }

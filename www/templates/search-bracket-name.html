@@ -6,6 +6,7 @@
         <input type="text" ng-model="vm.bracket.name" value="" placeholder="Some bracket name">
       </label>
       <input ng-disabled="vm.beenClicked" id='bracketButton' type="submit" class='btn btn-warning middle2' value="Go to your bracket!">
+      <input ui-sref='home' id='bracketButton' type="button" class='btn btn-warning middle2' value="Go back home">
       <p ng-show="vm.beenClicked">Loading, dude.</p>
     </form>
 </ion-content>
