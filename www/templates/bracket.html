@@ -39,7 +39,7 @@
     		<li class="spacer">&nbsp;</li>
     	</ul>
 
-      <ul ng-show="player.user_name" class="round round-2">
+      <ul class="round round-2">
     		<li class="spacer">&nbsp;</li>
 
           <a style="text-decoration : none" ui-sref='round-details'>
@@ -89,14 +89,12 @@
     	<ul ng-show="player.user_name" class="round round-3">
     		<li class="spacer">&nbsp;</li>
 
-<<<<<<< HEAD
-        <!-- <a ui-sref='round-details'> -->
+
+
         <span ng-click='vm.roundDetails3(vm.bracket, "round3")'>
-=======
+
         <a style="text-decoration : none" ui-sref='round-details'>
 
-        <span ng-click='vm.roundDetails3(vm.bracket)'>
->>>>>>> 4a666817cc8220c85c6cfd300a587704d80bc98f
 
     		<li class="game game-top winner">
           <span ng-repeat="player in vm.bracket">
@@ -117,7 +115,7 @@
           </span>
         </li>
       </span>
-      <!-- </a> -->
+      </a>
 
     		<li class="spacer">&nbsp;</li>
     	</ul>
