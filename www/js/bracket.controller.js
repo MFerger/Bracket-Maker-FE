@@ -8,6 +8,7 @@
     function bracketController($log, bracketService, $http, $stateParams, $state, $window, $rootScope) {
       var vm = this;
       vm.bracketFull = false;
+
       if ($stateParams.player1_id && $stateParams.player2_id) {
         $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/player/' + $stateParams.player1_id).then(function(user1Obj){
           vm.player1 = user1Obj.data;
