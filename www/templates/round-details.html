@@ -16,6 +16,10 @@
     </select>
   </label>
 </div>
-<button ng-disabled="vm.beenClicked" type="button" id='submitWinner' ng-click='vm.selectWinner(winner)' class='btn btn-warning middle3'>Submit Winner</button>
-</ion-content>
+<button
+    ng-disabled="vm.beenClicked"
+    type="button" id='submitWinner'
+    ng-click='winner == vm.player1.initial_location ? vm.selectWinner(winner, vm.player2.initial_location) : vm.selectWinner(winner, vm.player1.initial_location)'
+    class='btn btn-warning middle3'>Submit Winner</button>
+  </ion-content>
 </ion-view>
