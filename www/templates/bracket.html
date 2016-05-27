@@ -39,13 +39,11 @@
     		<li class="spacer">&nbsp;</li>
     	</ul>
 
-      <ul ng-show="player.user_name" class="round round-2">
+      <ul class="round round-2">
     		<li class="spacer">&nbsp;</li>
 
           <a style="text-decoration : none" ui-sref='round-details'>
 
-        <span ng-click='vm.roundDetails2(vm.bracket, 1)'>
-    		<li class="game game-top winner">
           <span ng-repeat="player in vm.bracket">
             <span id="topPlayer" ng-if="player.initial_location === 'N1' && player.round1">{{player.user_name}}</span>
             <span id="topPlayer" ng-if="player.initial_location === 'N2' && player.round1">{{player.user_name}}</span>
@@ -59,15 +57,12 @@
             <span ng-if="player.initial_location === 'N4' && player.round1">{{player.user_name}}</span>
           </span>
         </li>
-        </span>
-      <!-- </a> -->
+      </a>
 
     		<li class="spacer">&nbsp;</li>
 
           <a style="text-decoration : none" ui-sref='round-details'>
 
-            <span ng-click='vm.roundDetails2(vm.bracket, 2)'>
-    		<li class="game game-top winner">
           <span ng-repeat="player in vm.bracket">
             <span id="topPlayer" ng-if="player.initial_location === 'S1' && player.round1">{{player.user_name}}</span>
             <span id="topPlayer" ng-if="player.initial_location === 'S2' && player.round1">{{player.user_name}}</span>
@@ -81,19 +76,16 @@
             <span ng-if="player.initial_location === 'S4' && player.round1">{{player.user_name}}</span>
           </span>
         </li>
-      <!-- </a> -->
+      </a>
 
     		<li class="spacer">&nbsp;</li>
 
     	</ul>
-    	<ul ng-show="player.user_name" class="round round-3">
+    	<ul class="round round-3">
     		<li class="spacer">&nbsp;</li>
 
         <a style="text-decoration : none" ui-sref='round-details'>
 
-        <span ng-click='vm.roundDetails3(vm.bracket)'>
-
-    		<li class="game game-top winner">
           <span ng-repeat="player in vm.bracket">
             <span id="topPlayer" ng-if="player.initial_location === 'N1' && player.round2">{{player.user_name}}</span>
             <span id="topPlayer" ng-if="player.initial_location === 'N2' && player.round2">{{player.user_name}}</span>
@@ -111,8 +103,7 @@
             <span id="topPlayer" ng-if="player.initial_location === 'S4' && player.round2">{{player.user_name}}</span>
           </span>
         </li>
-      </span>
-      <!-- </a> -->
+      </a>
 
     		<li class="spacer">&nbsp;</li>
     	</ul>
