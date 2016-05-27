@@ -16,6 +16,6 @@
     </select>
   </label>
 </div>
-<button type="button" id='submitWinner' ng-click='vm.selectWinner(winner)' class='btn btn-warning middle3'>Submit Winner</button>
+<button ng-disabled="vm.beenClicked" type="button" id='submitWinner' ng-click='vm.selectWinner(winner)' class='btn btn-warning middle3'>Submit Winner</button>
 </ion-content>
 </ion-view>
