@@ -7,6 +7,7 @@
     bracketController.$inject = ['$log', 'bracketService', '$http', '$stateParams', '$state', '$window'];
     function bracketController($log, bracketService, $http, $stateParams, $state, $window) {
       var vm = this;
+      vm.winnerDude = 'NOT poopp';
       if ($stateParams.player1_id && $stateParams.player2_id) {
         $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/player/' + $stateParams.player1_id).then(function(user1Obj){
           vm.player1 = user1Obj.data;
@@ -27,6 +28,7 @@
           $window.location.reload();  }
 
       vm.roundDetails = function (bracketName, player1, player2, round) {
+        console.log('data from the object', player1);
         $state.go('round-details', {player1_id: player1._id, player2_id: player2._id, bracket_name: bracketName, round: round})
       }
       vm.roundDetails2 = function (players, clickLocation) {
@@ -63,7 +65,7 @@
 
         $state.go('round-details', {player1_id: playerArr[0]._id, player2_id: playerArr[1]._id, bracket_name: playerArr[0].bracket_name, round: 'round2'})
       }
-      vm.roundDetails3 = function (players) {
+      vm.roundDetails3 = function (players, round) {
         console.log('players: ', players);
         var playerArr = [];
         players.forEach(function (player) {
@@ -72,12 +74,14 @@
                 console.log('playerz: ', player);
                 playerArr.push(player);
               }
-              if (player.round2 && (player.initial_location === 'N1' || player.initial_location === 'N2' || player.initial_location === 'N3' || player.initial_location === 'N4' )){                playerArr.push(player);
+              if (player.round2 && (player.initial_location === 'N1' || player.initial_location === 'N2' || player.initial_location === 'N3' || player.initial_location === 'N4' )){
+                playerArr.push(player);
+
               }
 
         })
 
-        $state.go('round-details', {player1_id: playerArr[0]._id, player2_id: playerArr[1]._id, bracket_name: playerArr[0].bracket_name, round: 'round2'})
+        $state.go('round-details', {player1_id: playerArr[0]._id, player2_id: playerArr[1]._id, bracket_name: playerArr[0].bracket_name, round: round})
       }
 
       vm.selectWinner = function (winner) {
@@ -88,16 +92,27 @@
           round: $stateParams.round,
           result: true
         }).then(function(){
-          $state.go('bracket', {bracket_name: $stateParams.bracket_name})
+          if($stateParams.round !== 'round3'){
+            $state.go('bracket', {bracket_name: $stateParams.bracket_name})
+          } else {
+
+            $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/bracket/' + $stateParams.bracket_name).then(function(bracket){
+              vm.bracket = bracket.data;
+              console.log(vm.bracket);
+              var winnerDude = vm.bracket.find(function (item) {
+                return item.initial_location === winner
+              })
+              vm.winnerDude = winnerDude.user_name
+              console.log('probz not working,', vm.winnerDude);
+              $state.go('winner', {winnerName: vm.winnerDude})
+            })
+          }
         })
       }
-
-
       vm.addMorePlayers = function(){
         $state.go('choose-player-name', {bracketName: vm.bracket[0].bracket_name});
 
       }
-
 }
 
 

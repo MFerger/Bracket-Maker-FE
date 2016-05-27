@@ -4,6 +4,13 @@ main{
   flex-direction:row;
   padding-right:15px;
 }
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .round{
   display:flex;
   flex-direction:column;
