@@ -93,6 +93,7 @@
       }
 
       vm.selectWinner = function (winner) {
+        vm.beenClicked = true;
         console.log('bracket name, location, round', $stateParams.bracket_name, winner, $stateParams.round);
         $http.post('https://damp-eyrie-43620.herokuapp.com/api/v1/bracket/result', {
           bracket_name: $stateParams.bracket_name,
@@ -118,6 +119,8 @@
         })
           console.log('vm.winnerDude from line 119 :', $rootScope.winnerDude);
           }
+        }).then(function(){
+          vm.beenClicked = false;
         })
       }
 

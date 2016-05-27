@@ -21,7 +21,10 @@
       if (vm.bracket.name){
       bracketService.populateBracket(vm.bracket.name, vm.user.name, create)
       .then(function (res) {
-        $state.go('bracket', {bracket_name: vm.bracket.name})
+        console.log('res in bracket name', res);
+        if (!res.data.error) {
+          $state.go('bracket', {bracket_name: vm.bracket.name})
+        }
       }).then(function(){
         vm.beenClicked = false;
       })
