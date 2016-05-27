@@ -6,7 +6,7 @@
     	<ul class="round round-1">
     		<li class="spacer">&nbsp;</li>
 
-      <a style="text-decoration : none" ng-click='vm.roundDetails(vm.bracket[0].bracket_name, vm.bracket[0], vm.bracket[1], "round1")'>
+      <a style="text-decoration : none" ng-click='vm.roundDetails(vm.bracket, "N1", "N2", "round1")'>
     		<span ng-repeat="player in vm.bracket"><span id="topPlayer" ng-if="player.initial_location === 'N1'">{{player.user_name}}</span></span><li class="game game-top"></li>
     		<li class="game game-spacer">&nbsp;</li>
     		<li class="game game-bottom "><span ng-repeat="player in vm.bracket"><span ng-if="player.initial_location === 'N2'">{{player.user_name}}</span></span></li>
@@ -14,7 +14,7 @@
 
     		<li class="spacer">&nbsp;</li>
 
-        <a style="text-decoration : none" ng-click='vm.roundDetails(vm.bracket[0].bracket_name, vm.bracket[2], vm.bracket[3], "round1")'>
+        <a style="text-decoration : none" ng-click='vm.roundDetails(vm.bracket, "N3", "N4", "round1")'>
     		<span ng-repeat="player in vm.bracket"><span id="topPlayer" ng-if="player.initial_location === 'N3'">{{player.user_name}}</span></span><li class="game game-top"></li>
     		<li class="game game-spacer">&nbsp;</li>
     		<li class="game game-bottom "><span ng-repeat="player in vm.bracket"><span ng-if="player.initial_location === 'N4'">{{player.user_name}}</span></span></li>
@@ -22,7 +22,7 @@
 
     		<li class="spacer">&nbsp;</li>
 
-        <a style="text-decoration : none" ng-click='vm.roundDetails(vm.bracket[0].bracket_name, vm.bracket[4], vm.bracket[5], "round1")'>
+        <a style="text-decoration : none" ng-click='vm.roundDetails(vm.bracket, "S1", "S2", "round1")'>
     		<span ng-repeat="player in vm.bracket"><span id="topPlayer" ng-if="player.initial_location === 'S1'">{{player.user_name}}</span></span><li class="game game-top "></li>
     		<li class="game game-spacer">&nbsp;</li>
     		<li class="game game-bottom "><span ng-repeat="player in vm.bracket"><span ng-if="player.initial_location === 'S2'">{{player.user_name}}</span></span></li>
@@ -30,7 +30,7 @@
 
     		<li class="spacer">&nbsp;</li>
 
-        <a style="text-decoration : none" ng-click='vm.roundDetails(vm.bracket[0].bracket_name, vm.bracket[6], vm.bracket[7], "round1")'>
+        <a style="text-decoration : none" ng-click='vm.roundDetails(vm.bracket, "S3", "S4", "round1")'>
     		<span ng-repeat="player in vm.bracket"><span id="topPlayer" ng-if="player.initial_location === 'S3'">{{player.user_name}}</span></span><li class="game game-top"></li>
     		<li class="game game-spacer">&nbsp;</li>
     		<li class="game game-bottom "><span ng-repeat="player in vm.bracket"><span ng-if="player.initial_location === 'S4'">{{player.user_name}}</span></span></li>
