@@ -8,6 +8,7 @@
     function bracketController($log, bracketService, $http, $stateParams, $state, $window, $rootScope) {
       var vm = this;
       vm.bracketFull = false;
+
       if ($stateParams.player1_id && $stateParams.player2_id) {
         $http.get('https://damp-eyrie-43620.herokuapp.com/api/v1/player/' + $stateParams.player1_id).then(function(user1Obj){
           vm.player1 = user1Obj.data;
@@ -34,9 +35,20 @@
       vm.refresh = function(){
           $window.location.reload();  }
 
-      vm.roundDetails = function (bracketName, player1, player2, round) {
-        console.log('data from the object', player1);
-        $state.go('round-details', {player1_id: player1._id, player2_id: player2._id, bracket_name: bracketName, round: round})
+      vm.roundDetails = function (bracket, player1_location, player2_location, round) {
+        var player1id;
+        var player2id;
+        bracket.forEach(function (player) {
+          if (player.initial_location === player1_location) {
+            player1id = player._id;
+            console.log('p1', player1id);
+          }
+          if (player.initial_location === player2_location) {
+            player2id = player._id;
+            console.log('p2', player2id);
+          }
+        })
+        $state.go('round-details', {player1_id: player1id, player2_id: player2id, bracket_name: bracket[0].bracket_name, round: round})
       }
       vm.roundDetails2 = function (players, clickLocation) {
         console.log('players: ', players);

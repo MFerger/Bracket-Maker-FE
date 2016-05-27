@@ -60,8 +60,9 @@
         if(response && response.status === 200) {
           $state.go('choose-player-name', {bracketName: vm.bracket.name});
         } else {
-          $state.go('search-bracket-name')
           vm.bracket.name = ""
+          $state.go('search-bracket-name')
+
         }
       }).then(function(){
         vm.beenClicked = false;
