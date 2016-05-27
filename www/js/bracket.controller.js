@@ -74,8 +74,9 @@
                 console.log('playerz: ', player);
                 playerArr.push(player);
               }
-              if (player.round2 && (player.initial_location === 'S1' || player.initial_location === 'S2' || player.initial_location === 'S3' || player.initial_location === 'S4' )) {
+              if (player.round2 && (player.initial_location === 'N1' || player.initial_location === 'N2' || player.initial_location === 'N3' || player.initial_location === 'N4' )){
                 playerArr.push(player);
+
               }
 
         })
